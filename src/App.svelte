@@ -14,6 +14,15 @@
 
 	export let character = JSON.parse(window.localStorage.getItem('dnd-pad-character'));
 
+	if(!character) {
+		character = {
+			saving: {},
+			otherProficiencies: [],
+			featuresAndTraits: [],
+			attacks: []
+		};
+	}
+
 	afterUpdate(() => {
 		window.localStorage.setItem('dnd-pad-character', JSON.stringify(character));
 	});
