@@ -3,12 +3,14 @@ import resolve from '@rollup/plugin-node-resolve';
 import commonjs from '@rollup/plugin-commonjs';
 import livereload from 'rollup-plugin-livereload';
 import { terser } from 'rollup-plugin-terser';
+import preprocess from 'svelte-preprocess';
+import scss from 'rollup-plugin-scss';
 
 const production = !process.env.ROLLUP_WATCH;
 
 function serve() {
 	let server;
-	
+
 	function toExit() {
 		if (server) server.kill(0);
 	}
@@ -36,14 +38,18 @@ export default {
 		file: 'public/build/bundle.js'
 	},
 	plugins: [
+		scss(),
 		svelte({
 			// enable run-time checks when not in production
 			dev: !production,
+			// sass
+			preprocess: preprocess(),
+			emitCss: true,
 			// we'll extract any component CSS out into
 			// a separate file - better for performance
-			css: css => {
-				css.write('bundle.css');
-			}
+			//css: css => {
+			//	css.write('bundle.css');
+			//}
 		}),
 
 		// If you have external dependencies installed from
