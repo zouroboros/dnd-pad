@@ -17,50 +17,47 @@ input[type="text"], input[type="number"], textarea {
 .flex {
 	display: flex;
 	flex-wrap: wrap;
-}
 
-.flex > * {
+	.stat-box input, .flex .stat-box textarea {
+	 display: block;
+	 width: 100%;
+ }
 }
 
 .stat-box {
 	padding: 1rem;
-}
 
-.stat-box label {
-	display: block;
-}
+	label {
+		display: block;
+	}
 
-.stat-box input, .stat-box textarea {
-	font-size: 125%;
-}
+	input, textarea {
+		font-size: 125%;
+	}
 
-.flex .stat-box input, .flex .stat-box textarea {
-	display: block;
-	width: 100%;
-}
+	.modifier {
+		display: flex;
+		border-bottom: solid;
+		border-color: rgb(224, 224, 224);
 
-.stat-box .modifier {
-	display: flex;
-	border-bottom: solid;
-	border-color: rgb(224, 224, 224);
-}
+		input {
+			display: inline-block;
+			border-bottom: none;
+			flex-grow: 1;
+		}
+	}
 
-.stat-box .modifier input {
-	display: inline-block;
-	border-bottom: none;
-	flex-grow: 1;
-}
+	.modifier-checkbox {
+		display: flex;
+		border-bottom: solid;
+		border-color: rgb(224, 224, 224);
 
-.stat-box .modifier-checkbox {
-	display: flex;
-	border-bottom: solid;
-	border-color: rgb(224, 224, 224);
-}
+		input {
+			width: auto;
+		}
 
-.stat-box .modifier-checkbox input {
-	width: auto;
-}
-
-.stat-box .modifier-checkbox .modifier {
-	border-bottom: none;
+		.modifier {
+			border-bottom: none;
+		}
+	}
 }
