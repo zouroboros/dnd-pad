@@ -14,6 +14,12 @@
   }
 </script>
 
+<style>
+table.stat-box input {
+  width: 100%;
+}
+</style>
+
 <div>
   <h2>Attacks & Spellcasting</h2>
   <table class="stat-box">

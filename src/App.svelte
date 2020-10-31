@@ -37,6 +37,7 @@
 
 <main>
 	<form class="character-sheet">
+			<h1>Character</h1>
 			<div>
 				<CharacterName bind:character={character} />
 			</div>

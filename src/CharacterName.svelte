@@ -4,6 +4,7 @@
 <style>
 #character-name {
   font-size: 200%;
+  width: 100%;
 }
 </style>
 
