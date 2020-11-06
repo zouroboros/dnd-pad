@@ -1,5 +1,19 @@
 $border-color: rgb(224, 224, 224);
 
+@font-face {
+    font-family: 'standardgrafregular';
+    src: url('../fonts/Standard Graf/standard-graf_regular.eot');
+    src: url('../fonts/Standard Graf/standard-graf_regular.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/Standard Graf/standard-graf_regular.woff') format('woff'),
+         url('../fonts/Standard Graf/standard-graf_regular.ttf') format('truetype'),
+         url('../fonts/Standard Graf/standard-graf_regular.svg#standardgrafregular') format('svg');
+}
+
+* {
+	font-family: standardgrafregular;
+}
+
+
 html, body {
 	width: 100%;
 	height: 100%;

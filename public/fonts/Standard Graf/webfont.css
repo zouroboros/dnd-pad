@@ -1,0 +1,9 @@
+@font-face {
+    font-family: 'standardgrafregular';
+    src: url('standard-graf_regular.eot');
+    src: url('standard-graf_regular.eot?#iefix') format('embedded-opentype'),
+         url('standard-graf_regular.woff') format('woff'),
+         url('standard-graf_regular.ttf') format('truetype'),
+         url('standard-graf_regular.svg#standardgrafregular') format('svg');
+}
+

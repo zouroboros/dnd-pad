@@ -1,0 +1,44 @@
+
+  FONTLOG: Standard Graf
+
+  --------------------------------------------
+  StandardGraf-Regular
+  --------------------------------------------
+
+  This file provides detailed information on the StandardGraf 
+  font Software.
+  This information should be distributed along with the 
+  StandardGraf font and any derivative works.
+  
+  StandardGraf Font Information
+  
+  Based on a Fraktur lettering guide template.
+  
+  Changelog
+  
+  7 Sep 2014 (Christoph Haag)
+- created fontforge sources as base to work on GNU/Linux
+- changed vertical metrics, causing strange behaviour as 
+  webfont.
+- adjusted metadata
+  
+  26 Jul 2014 (Peter Wiegel)
+- Initial release
+  
+  Acknowledgements
+  
+  If you make modifications be sure to add your name (N), 
+  email (E), web-address (if you have one) (W) and 
+  description (D). This list is in alphabetical order.
+  
+  N: Christoph Haag
+  E: christoph@lafkon.net
+  W: www.lafkon.net
+  D: Transformer
+  
+  N: Peter Wiegel
+  E: wiegel@aepnet.de
+  W: www.peter-wiegel.de 
+  D: Font Maker Deluxe
+
+
