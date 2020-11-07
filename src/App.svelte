@@ -27,6 +27,28 @@
 		window.localStorage.setItem('dnd-pad-character', JSON.stringify(character));
 	});
 
+	let save = function() {
+		var blob = new Blob([JSON.stringify(character)], {type: 'text/json'});
+		var url = URL.createObjectURL(blob);
+		var link = document.createElement('a');
+		link.download = (character.name ?? 'dnd-pad') + '.json'
+		link.href = url;
+		link.dispatchEvent(new MouseEvent('click'));
+	};
+
+	let open = function(event) {
+		if(event.srcElement.files.length > 0) {
+			var file = event.target.files[0];
+			const reader = new FileReader();
+			reader.onload = function(event) {
+				const json = JSON.parse(event.target.result);
+				if(json) {
+					character = json;
+				}
+			};
+			reader.readAsText(file);
+		}
+	}
 </script>
 
 <style>
@@ -35,8 +57,12 @@
 }
 </style>
 
+<header>
+	<button type="button" on:click={save}>Save As</button>
+	<input type="file" on:change={open} />
+</header>
 <main>
-	<form class="character-sheet">
+	<form class="character-sheet gothic">
 			<h1>Character</h1>
 			<div>
 				<CharacterName bind:character={character} />
