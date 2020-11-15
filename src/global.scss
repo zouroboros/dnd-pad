@@ -13,6 +13,11 @@ $border-color: rgb(224, 224, 224);
 	font-family: standardgrafregular;
 }
 
+@media print {
+  .hide-on-print, button {
+    display: none;
+  }
+}
 
 html, body {
 	width: 100%;

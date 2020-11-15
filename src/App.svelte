@@ -57,7 +57,7 @@
 }
 </style>
 
-<header>
+<header class="hide-on-print">
 	<button type="button" on:click={save}>Save As</button>
 	<input type="file" on:change={open} />
 </header>
