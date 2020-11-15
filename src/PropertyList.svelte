@@ -5,6 +5,7 @@
 
   let add = function(property) {
     properties = [...properties, property]
+    text = ''
   };
 
   let remove = function(property) {
