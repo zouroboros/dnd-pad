@@ -1,6 +1,6 @@
 <script>
   export let name;
-  export let stat = '';
+  export let stat;
 </script>
 <style>
 </style>

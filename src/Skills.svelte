@@ -1,5 +1,8 @@
 <script>
 export let character;
+if(!character.proficiencies) {
+  character.proficiencies = {}
+}
 
 let fields = [{name: 'Acrobatics (Dex)', field: 'acrobatics'},
   {name: 'Animal Handling (Wis)', field: 'animalHandling'},
@@ -16,7 +19,7 @@ let fields = [{name: 'Acrobatics (Dex)', field: 'acrobatics'},
   {name: 'Performance (Cha)', field: 'performance'},
   {name: 'Persuasion (Cha)', field: 'persuasion'},
   {name: 'Religion (Int)', field: 'religion'},
-  {name: 'Sleight of Hand (Dexterity)', field: 'sleightOfHand'},
+  {name: 'Sleight of Hand (Dex)', field: 'sleightOfHand'},
   {name: 'Stealth (Dex)', field: 'stealth'},
   {name: 'Survival (Wis)', field: 'survival'}];
 </script>
@@ -28,7 +31,7 @@ let fields = [{name: 'Acrobatics (Dex)', field: 'acrobatics'},
       <div class="stat-box">
         <label for="{field.field}-checkbox"> {field.name}</label>
         <div class="modifier-checkbox">
-          <input type="checkbox" id="{field.field}-checkbox" />
+          <input type="checkbox" id="{field.field}-checkbox" bind:checked={character.proficiencies[field.field]}/>
           <div class="modifier">
             <input type="number" bind:value={character[field.field]} size="4" min="0"/>
           </div>

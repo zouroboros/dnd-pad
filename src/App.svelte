@@ -74,10 +74,10 @@
 				<CharacterStats bind:character={character} />
 			</div>
 			<div>
-				<SingleState name={'Inspiration'} stat={character.inspiration} bind:value={character.inspiration} />
+				<SingleState name={'Inspiration'} bind:stat={character.inspiration} />
 			</div>
 			<div>
-				<SingleState name={'Proficiency Bonus'} stat={character.proficiency} bind:value={character.proficiency} />
+				<SingleState name={'Proficiency Bonus'} bind:stat={character.proficiency} />
 			</div>
 			<div>
 				<SavingThrows bind:saving={character.saving}/>
