@@ -10,7 +10,8 @@
 	import Skills from './Skills.svelte';
 	import HitPoints from './HitPoints.svelte';
 	import BackgroundInfos from './BackgroundInfos.svelte';
-	import AttacksSpellcasting from './AttacksSpellcasting.svelte';
+	import Attacks from './Attacks.svelte';
+	import Spells from './Spells.svelte';
 	import PropertyList from './PropertyList.svelte';
 	import Equipment from './Equipment.svelte';
 
@@ -25,6 +26,7 @@
 			otherProficiencies: [],
 			featuresAndTraits: [],
 			attacks: [],
+			spellSlots: [],
 			passiveWisdom: 0,
 			proficiency: 0,
 			inspiration: 0,
@@ -56,6 +58,11 @@
 			reader.onload = function(event) {
 				const json = JSON.parse(event.target.result);
 				if(json) {
+					// Upgrade missing fields
+					if(!json.spellSlots) {
+						json.spellSlots = [];
+					}
+					// end upgrade
 					saveCharacter(json);
 					character = json;
 				}
@@ -112,7 +119,10 @@
 				<BackgroundInfos bind:character={character}/>
 			</div>
 			<div>
-				<AttacksSpellcasting bind:character={character} />
+				<Attacks bind:character={character} />
+			</div>
+			<div>
+				<Spells bind:character={character} />
 			</div>
 			<div>
 				<h2>Other Proficiencies &amp; Languages</h2>

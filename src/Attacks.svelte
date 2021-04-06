@@ -21,7 +21,7 @@ table.stat-box input {
 </style>
 
 <div>
-  <h2>Attacks & Spellcasting</h2>
+  <h2>Attacks</h2>
   <table class="stat-box">
     <thead>
       <td>Name</td>
@@ -68,4 +68,6 @@ table.stat-box input {
       </tr>
     </tbody>
   </table>
+
+
 </div>
