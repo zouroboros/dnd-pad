@@ -1,4 +1,6 @@
 <script>
+	import equal from 'deep-equal';
+
 	import { afterUpdate } from 'svelte';
 	import CharacterName from './CharacterName.svelte';
 	import CharacterPanel from './CharacterPanel.svelte';
@@ -12,23 +14,34 @@
 	import PropertyList from './PropertyList.svelte';
 	import Equipment from './Equipment.svelte';
 
-	export let character = JSON.parse(window.localStorage.getItem('dnd-pad-character'));
+	let loadCharacter = () => JSON.parse(window.localStorage.getItem('dnd-pad-character'));
+	let saveCharacter = (characterToSave) => window.localStorage.setItem('dnd-pad-character', JSON.stringify(characterToSave));
+
+	export let character = loadCharacter();
 
 	if(!character) {
 		character = {
 			saving: {},
 			otherProficiencies: [],
 			featuresAndTraits: [],
-			attacks: []
+			attacks: [],
+			passiveWisdom: 0,
+			proficiency: 0,
+			inspiration: 0,
+			lastChanged: null
 		};
 	}
 
 	afterUpdate(() => {
-		window.localStorage.setItem('dnd-pad-character', JSON.stringify(character));
+		let originalCharacter = loadCharacter();
+		if (character && !equal(originalCharacter, character)) {
+			character.lastChanged = new Date().getTime();
+			saveCharacter(character)
+		}
 	});
 
-	let save = function() {
-		var blob = new Blob([JSON.stringify(character)], {type: 'text/json'});
+	let save = function(characterToSave) {
+		var blob = new Blob([JSON.stringify(characterToSave)], {type: 'text/json'});
 		var url = URL.createObjectURL(blob);
 		var link = document.createElement('a');
 		link.download = (character.name ?? 'dnd-pad') + '.json'
@@ -43,6 +56,7 @@
 			reader.onload = function(event) {
 				const json = JSON.parse(event.target.result);
 				if(json) {
+					saveCharacter(json);
 					character = json;
 				}
 			};
@@ -58,8 +72,11 @@
 </style>
 
 <header class="hide-on-print">
-	<button type="button" on:click={save}>Save As</button>
+	<button type="button" on:click={() => save(character)}>Save As</button>
 	<input type="file" on:change={open} />
+	{#if character.lastChanged}
+		<span>Last change: {new Date(character.lastChanged).toLocaleString()}</span>
+	{/if}
 </header>
 <main>
 	<form class="character-sheet gothic">

@@ -16,6 +16,7 @@
     "svelte": "^3.0.0"
   },
   "dependencies": {
+    "deep-equal": "^2.0.5",
     "node-sass": "^4.14.1",
     "rollup-plugin-scss": "^2.6.1",
     "sirv-cli": "^1.0.0",
