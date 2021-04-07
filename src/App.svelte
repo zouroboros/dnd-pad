@@ -15,7 +15,25 @@
 	import PropertyList from './PropertyList.svelte';
 	import Equipment from './Equipment.svelte';
 
-	let loadCharacter = () => JSON.parse(window.localStorage.getItem('dnd-pad-character'));
+	let upgradeCharacter = function(characterObject) {
+		if(!characterObject) {
+			return null;
+		}
+		// Upgrade missing fields
+		if(!characterObject.spellSlots) {
+			characterObject.spellSlots = [];
+		}
+		if(!characterObject.spellcastingAbility) {
+			characterObject.spellcastingAbility = null;
+			characterObject.spellsaveDc = null;
+			characterObject.spellattackBonus = null;
+		}
+		if(!characterObject.spells) {
+			characterObject.spells = [];
+		}
+	};
+
+	let loadCharacter = () => upgradeCharacter(JSON.parse(window.localStorage.getItem('dnd-pad-character')));
 	let saveCharacter = (characterToSave) => window.localStorage.setItem('dnd-pad-character', JSON.stringify(characterToSave));
 
 	export let character = loadCharacter();
@@ -28,6 +46,7 @@
 			attacks: [],
 			spellSlots: [],
 			passiveWisdom: 0,
+			spells: [],
 			spellcastingAbility: null,
 			spellsaveDc: null,
 			spellattackBonus: null,
@@ -61,16 +80,7 @@
 			reader.onload = function(event) {
 				const json = JSON.parse(event.target.result);
 				if(json) {
-					// Upgrade missing fields
-					if(!json.spellSlots) {
-						json.spellSlots = [];
-					}
-					if(!json.spellcastingAbility) {
-						json.spellcastingAbility = null;
-						json.spellsaveDc = null;
-						json.spellattackBonus = null;
-					}
-					// end upgrade
+					upgradeCharacter(json);
 					saveCharacter(json);
 					character = json;
 				}
