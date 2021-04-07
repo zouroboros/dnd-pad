@@ -28,6 +28,9 @@
 			attacks: [],
 			spellSlots: [],
 			passiveWisdom: 0,
+			spellcastingAbility: null,
+			spellsaveDc: null,
+			spellattackBonus: null,
 			proficiency: 0,
 			inspiration: 0,
 			lastChanged: null
@@ -61,6 +64,11 @@
 					// Upgrade missing fields
 					if(!json.spellSlots) {
 						json.spellSlots = [];
+					}
+					if(!json.spellcastingAbility) {
+						json.spellcastingAbility = null;
+						json.spellsaveDc = null;
+						json.spellattackBonus = null;
 					}
 					// end upgrade
 					saveCharacter(json);

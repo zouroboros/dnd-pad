@@ -26,6 +26,21 @@
 
 <div>
 <h2>Spells</h2>
+<div class="flex">
+  <div class="stat-box">
+    <label for="spellcasting-ability">Spellcasting Ability</label>
+    <input id="spellcasting-ability" type="number" bind:value={character.spellcastingAbility} />
+  </div>
+  <div class="stat-box">
+    <label for="spellsave-dc">Spellsave DC</label>
+    <input id="spellsave-dc" type="number" bind:value={character.spellsaveDc} />
+  </div>
+  <div class="stat-box">
+    <label for="spellattack-bonus">Spellsave DC</label>
+    <input id="spellattack-bonus" type="number" bind:value={character.spellattackBonus} />
+  </div>
+</div>
+<h3>Spellslots</h3>
   <table>
     <thead>
       <td>Level</td><td>Available</td><td>Used</td><td></td>
