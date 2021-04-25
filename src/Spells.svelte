@@ -52,7 +52,7 @@
     <input id="spellsave-dc" type="number" bind:value={character.spellsaveDc} />
   </div>
   <div class="stat-box">
-    <label for="spellattack-bonus">Spellsave DC</label>
+    <label for="spellattack-bonus">Spellattack Bonus DC</label>
     <input id="spellattack-bonus" type="number" bind:value={character.spellattackBonus} />
   </div>
 </div>
