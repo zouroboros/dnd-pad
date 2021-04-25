@@ -14,6 +14,7 @@
 	import Spells from './Spells.svelte';
 	import PropertyList from './PropertyList.svelte';
 	import Equipment from './Equipment.svelte';
+	import Notes from './Notes.svelte';
 
 	let upgradeCharacter = function(characterObject) {
 		if(!characterObject) {
@@ -30,6 +31,9 @@
 		}
 		if(!characterObject.spells) {
 			characterObject.spells = [];
+		}
+		if(!characterObject.notes) {
+			characterObject.notes = null;
 		}
 	};
 
@@ -152,6 +156,9 @@
 			<div>
 				<h2>Features & Traits</h2>
 				<PropertyList bind:properties={character.featuresAndTraits}/>
+			</div>
+			<div>
+				<Notes bind:notes={character.notes} />
 			</div>
 	</form>
 </main>
