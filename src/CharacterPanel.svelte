@@ -28,6 +28,6 @@
   </div>
   <div class="stat-box">
     <label for="experience-points">Experience Points</label>
-    <input id="experience-points" bind:value={character.experience} type="text" placeholder="Character name" />
+    <input id="experience-points" bind:value={character.experience} type="text" placeholder="Experience points" />
   </div>
 </div>

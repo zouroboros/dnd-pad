@@ -35,11 +35,11 @@
 		if(!characterObject.notes) {
 			characterObject.notes = null;
 		}
+		return characterObject
 	};
 
 	let loadCharacter = () => upgradeCharacter(JSON.parse(window.localStorage.getItem('dnd-pad-character')));
 	let saveCharacter = (characterToSave) => window.localStorage.setItem('dnd-pad-character', JSON.stringify(characterToSave));
-
 	export let character = loadCharacter();
 
 	if(!character) {
