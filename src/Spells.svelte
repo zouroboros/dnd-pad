@@ -15,13 +15,13 @@
 
   let addSpellSlot = function(level, available, used) {
     character.spellSlots = [...character.spellSlots, {level: level, available: available, used: used}]
-    level = '';
-    available = '';
-    used = '';
+    level = null;
+    available = null;
+    used = null;
   };
 
   let removeSpellSlot = function(spell) {
-    character.spells = character.spells.filter(s => s !== spell)
+    character.spellSlots = character.spellSlots.filter(s => s !== spell)
   };
 
 
@@ -86,7 +86,7 @@
   <tr>
     <td>{spell.level}</td>
     <td><a href="{spell.link}" target="_blank">{spell.name}</a></td>
-    <td><button type="button" on:click={remove(spell)}>Remove</td>
+    <td><button type="button" on:click={removeSpell(spell)}>Remove</td>
   </tr>
   {/each}
   <tr>
