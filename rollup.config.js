@@ -40,8 +40,10 @@ export default {
 	plugins: [
 		scss(),
 		svelte({
-			// enable run-time checks when not in production
-			dev: !production,
+			compilerOptions: {
+				// enable run-time checks when not in production
+				dev: !production
+			},
 			// sass
 			preprocess: preprocess(),
 			emitCss: true,
