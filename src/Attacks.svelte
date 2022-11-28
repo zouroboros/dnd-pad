@@ -15,9 +15,6 @@
 </script>
 
 <style>
-table.stat-box input {
-  width: 100%;
-}
 </style>
 
 <div>
