@@ -16,9 +16,10 @@ function serve() {
 	}
 
 	return {
-		writeBundle() {
+		async writeBundle() {
 			if (server) return;
-			server = require('child_process').spawn('npm', ['run', 'start', '--', '--dev'], {
+			const child_process = await import('child_process')
+			server = child_process.spawn('npm', ['run', 'start', '--', '--dev'], {
 				stdio: ['ignore', 'inherit', 'inherit'],
 				shell: true
 			});
