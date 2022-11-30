@@ -13,6 +13,27 @@
   let spellName = null;
   let spellLink = null;
 
+  const isCantrip = (spell) => new String(spell.level).trim().toLowerCase() === 'cantrip'
+
+  const compareSpellByLevel = function(spellA, spellB) {
+    if (isCantrip(spellA) && !isCantrip(spellB)) {
+      return -1
+    } else if (isCantrip(spellB)) {
+      return 1
+    }
+    return new String(spellA.level).localeCompare(new String(spellB.level))
+  }
+
+  const compareSpells = function(spellA, spellB) {
+    if (compareSpellByLevel(spellA, spellB) !== 0) {
+      return compareSpellByLevel(spellA, spellB)
+    }
+
+    return spellA.name.localeCompare(spellB.name)
+  }
+
+  character.spells = character.spells.sort(compareSpells)
+
   let addSpellSlot = function(level, available, used) {
     character.spellSlots = [...character.spellSlots, {level: level, available: available, used: used}]
     level = null;
@@ -30,7 +51,7 @@
   };
 
   let addSpell = function(level, name, link) {
-    character.spells = [...character.spells, {level: level, name: name, link:link}];
+    character.spells = [...character.spells, {level: level, name: name, link:link}].sort(compareSpells);
     spellLevel = null;
     spellName = null;
     spellLink = null;
