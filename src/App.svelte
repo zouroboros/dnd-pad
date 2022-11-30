@@ -35,6 +35,9 @@
 		if(!characterObject.notes) {
 			characterObject.notes = null;
 		}
+		if(!characterObject.inspiration) {
+			characterObject.inspiration = 0;
+		}
 		return characterObject
 	};
 
