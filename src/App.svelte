@@ -86,6 +86,10 @@
 </script>
 
 <style>
+.app-menu {
+	position: fixed;
+	bottom: 100;
+}
 </style>
 
 <header class="hide-on-print">
@@ -97,4 +101,8 @@
 </header>
 <main>
 	<Character character={character}></Character>
+	<menu class="app-menu">
+		<li>Character sheet</li>
+		<li>Actions</li>
+	</menu>
 </main>
