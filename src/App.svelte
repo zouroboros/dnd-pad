@@ -3,6 +3,7 @@
 
 	import { afterUpdate } from 'svelte';
     import Character from './Character.svelte';
+	import Actions from './Actions.svelte';
 
 	import scrollSvg from './assets/scroll.svg'
 	import diceSvg from './assets/dice.svg'
@@ -86,6 +87,16 @@
 			reader.readAsText(file);
 		}
 	}
+
+	let inCharacterSheet = true;
+
+	const openCharacterSheet = () => {
+		inCharacterSheet = true;
+	}
+
+	const openActions = () => {
+		inCharacterSheet = false;
+	}
 </script>
 
 <style lang="scss">
@@ -133,13 +144,17 @@
 	<button type="button" on:click={() => save(character)}>Save As</button>
 	<input type="file" on:change={open} />
 	{#if character.lastChanged}
-		<span>Last change: {new Date(character.lastChanged).toLocaleString()}</span>
+		<span>Last change: {new Date(character.lastChanged).toLocaleString()}</span>	
 	{/if}
 </header>
 <main>
-	<Character character={character}></Character>
+	{#if inCharacterSheet}
+		<Character character={character}></Character>
+	{:else}
+		<Actions></Actions>
+	{/if}
 	<menu class="app-menu">
-		<li><button type="button"><img src="{scrollSvg}" alt="Character sheet"/></button></li>
-		<li><button type="button"><img src="{diceSvg}" alt="Actions"/></button></li>
+		<li><button type="button" on:click={openCharacterSheet}><img src="{scrollSvg}" alt="Character sheet"/></button></li>
+		<li><button type="button" on:click={openActions}><img src="{diceSvg}" alt="Actions"/></button></li>
 	</menu>
 </main>
