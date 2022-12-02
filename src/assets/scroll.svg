@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg:svg
+   id="svg3342"
+   sodipodi:docname="scroll.svg"
+   viewBox="0 0 370.19 382.98"
+   sodipodi:version="0.32"
+   version="1.0"
+   inkscape:output_extension="org.inkscape.output.svg.inkscape"
+   inkscape:version="1.2.1 (9c6d41e410, 2022-07-14)"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:dc="http://purl.org/dc/elements/1.1/">
+  <script
+     id="__gaOptOutExtension" />
+  <svg:defs
+     id="defs3344" />
+  <sodipodi:namedview
+     id="base"
+     bordercolor="#666666"
+     inkscape:pageshadow="2"
+     inkscape:window-y="32"
+     pagecolor="#ffffff"
+     inkscape:showpageshadow="false"
+     inkscape:zoom="0.82911689"
+     inkscape:window-x="0"
+     inkscape:window-height="1011"
+     showgrid="false"
+     borderopacity="1.0"
+     inkscape:current-layer="layer1"
+     inkscape:cx="343.13618"
+     inkscape:cy="160.41164"
+     inkscape:window-width="1920"
+     inkscape:pageopacity="0.0"
+     inkscape:document-units="px"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#d1d1d1"
+     inkscape:window-maximized="1" />
+  <svg:g
+     id="layer1"
+     inkscape:label="Camada 1"
+     inkscape:groupmode="layer"
+     transform="translate(-210.62 -359.19)">
+    <svg:path
+       id="path2550"
+       sodipodi:nodetypes="ccccc"
+       style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:6.1377px"
+       d="m 484.54,713.58 c 44.9,10.21 71.01,-55.9 34.23,-65.84 L 287.91,632.38 c 42.65,20.37 8.68,63.23 -35.55,59.25 z" />
+    <svg:path
+       id="path3322"
+       sodipodi:nodetypes="ccccc"
+       style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:6.1377px"
+       d="m 518.14,647.6 c -33.07,-2.76 -27.13,26.57 -21.75,33.06 L 263.77,662.23 c -8.76,-11.36 -0.14,-30.44 26.34,-29.85 z" />
+    <svg:path
+       id="path2520"
+       sodipodi:nodetypes="ccccc"
+       style="fill:#ffffff;fill-rule:evenodd;stroke:#000000;stroke-width:6.1377px;fill-opacity:1"
+       d="m 292.7,384.37 c 96.28,20.5 -122.97,292.03 -41.05,307.25 l 237.06,22.51 C 381.69,679.26 629.94,417.49 536.38,388.34 Z" />
+    <svg:path
+       id="path2522"
+       sodipodi:nodetypes="ccccc"
+       style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:6.1377px"
+       d="m 531.08,404.24 c 6.18,4.76 16.59,26.97 -7.1,30.06 l -260.42,-6.54 c 27.72,-9.57 17.5,-20.08 10.6,-27.5 z" />
+    <svg:path
+       id="path2524"
+       sodipodi:nodetypes="ccccc"
+       style="fill:#ffffff;fill-rule:evenodd;stroke:#000000;stroke-width:6.1377px;fill-opacity:1"
+       d="m 529.76,388.34 c -27.98,10.64 -26.34,41.19 -11.12,45.65 l -253,-6 c -11.08,0.03 -17.12,-43.37 25.74,-44.02 z" />
+  </svg:g>
+  <svg:metadata
+     id="metadata27">
+    <rdf:RDF>
+      <cc:Work>
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <cc:license
+           rdf:resource="http://creativecommons.org/licenses/publicdomain/" />
+        <dc:publisher>
+          <cc:Agent
+             rdf:about="http://openclipart.org/">
+            <dc:title>Openclipart</dc:title>
+          </cc:Agent>
+        </dc:publisher>
+        <dc:title>papyrus</dc:title>
+        <dc:date>2008-10-29T15:05:44</dc:date>
+        <dc:description>just a papyrus paper.</dc:description>
+        <dc:source>https://openclipart.org/detail/19841/papyrus-by-emyller</dc:source>
+        <dc:creator>
+          <cc:Agent>
+            <dc:title>emyller</dc:title>
+          </cc:Agent>
+        </dc:creator>
+        <dc:subject>
+          <rdf:Bag>
+            <rdf:li>paper</rdf:li>
+            <rdf:li>papyrus</rdf:li>
+          </rdf:Bag>
+        </dc:subject>
+      </cc:Work>
+      <cc:License
+         rdf:about="http://creativecommons.org/licenses/publicdomain/">
+        <cc:permits
+           rdf:resource="http://creativecommons.org/ns#Reproduction" />
+        <cc:permits
+           rdf:resource="http://creativecommons.org/ns#Distribution" />
+        <cc:permits
+           rdf:resource="http://creativecommons.org/ns#DerivativeWorks" />
+      </cc:License>
+    </rdf:RDF>
+  </svg:metadata>
+</svg:svg>

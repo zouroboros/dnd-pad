@@ -10,6 +10,10 @@ $margin: 1rem;
          url('/fonts/Standard Graf/standard-graf_regular.svg#standardgrafregular') format('svg');
 }
 
+* {
+	box-sizing: border-box;
+}
+
 .gothic * {
 	font-family: standardgrafregular;
 }

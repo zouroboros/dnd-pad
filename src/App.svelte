@@ -4,6 +4,9 @@
 	import { afterUpdate } from 'svelte';
     import Character from './Character.svelte';
 
+	import scrollSvg from './assets/scroll.svg'
+	import diceSvg from './assets/dice.svg'
+
 	let upgradeCharacter = function(characterObject) {
 		if(!characterObject) {
 			return null;
@@ -85,10 +88,44 @@
 	}
 </script>
 
-<style>
+<style lang="scss">
 .app-menu {
 	position: fixed;
-	bottom: 100;
+	bottom: 0;
+	left: 0;
+	margin: 0;
+	background-color: white;
+	padding: 0;
+	height: 5%;
+	width: 100%;
+	list-style: none;
+	display: flex;
+	flex-direction: row;
+	justify-content: space-around;
+
+	li {
+		display: block;
+		width: 50%;
+		text-align: center;
+		border: 0.1em solid black;
+
+		&:not(:last-child) {
+			border-right: none;
+		}
+
+		button {
+			height: 100%;
+			margin: 0;
+			padding: 0;
+			width: 100%;
+			background: none;
+			border: none;
+		}
+
+		img {
+			height: 100%;
+		}
+	}
 }
 </style>
 
@@ -102,7 +139,7 @@
 <main>
 	<Character character={character}></Character>
 	<menu class="app-menu">
-		<li>Character sheet</li>
-		<li>Actions</li>
+		<li><button type="button"><img src="{scrollSvg}" alt="Character sheet"/></button></li>
+		<li><button type="button"><img src="{diceSvg}" alt="Actions"/></button></li>
 	</menu>
 </main>
