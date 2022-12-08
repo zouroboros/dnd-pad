@@ -8,6 +8,7 @@
 
 	import scrollSvg from './assets/scroll.svg'
 	import diceSvg from './assets/dice.svg'
+	import gearSvg from './assets/gear.svg'
 
 	let upgradeCharacter = function(characterObject) {
 		if(!characterObject) {
@@ -134,7 +135,7 @@ main {
 
 	li {
 		display: block;
-		width: 50%;
+		width: 33.3%;
 		text-align: center;
 		border: 0.1em solid black;
 
@@ -169,12 +170,12 @@ main {
 		</div>
 	{:else}
 		<div class="app-screen">
-			<Settings onSave={() => save(character)} onOpen={() => open()} lastChanged={character.lastChanged}></Settings>
+			<Settings onSave={() => save(character)} onOpen={(event) => open(event)} lastChanged={character.lastChanged}></Settings>
 		</div>
 	{/if}
 	<menu class="app-menu hide-on-print">
 		<li><button type="button" on:click={openCharacterSheet}><img src="{scrollSvg}" alt="Character sheet"/></button></li>
 		<li><button type="button" on:click={openActions}><img src="{diceSvg}" alt="Actions"/></button></li>
-		<li><button type="button" on:click={openSettings}><img src="{diceSvg}" alt="Actions"/></button></li>
+		<li><button type="button" on:click={openSettings}><img src="{gearSvg}" alt="Settings"/></button></li>
 	</menu>
 </main>
