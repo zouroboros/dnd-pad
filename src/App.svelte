@@ -4,6 +4,7 @@
 	import { afterUpdate } from 'svelte';
     import Character from './Character.svelte';
 	import Actions from './Actions.svelte';
+	import Settings from './Settings.svelte'
 
 	import scrollSvg from './assets/scroll.svg'
 	import diceSvg from './assets/dice.svg'
@@ -89,25 +90,42 @@
 	}
 
 	let inCharacterSheet = true;
+	let inActions = false;
 
 	const openCharacterSheet = () => {
 		inCharacterSheet = true;
+		inActions = false;
 	}
 
 	const openActions = () => {
+		inCharacterSheet = false;
+		inActions = true;
+	}
+
+	const openSettings = () => {
+		inActions = false;
 		inCharacterSheet = false;
 	}
 </script>
 
 <style lang="scss">
+main {
+	display: flex;
+	flex-direction: column;
+	height: 100%;
+}
+.app-screen {
+	flex-grow: 1;
+	flex-shrink: 1;
+	width: 100%;
+	overflow: scroll;
+}
 .app-menu {
-	position: fixed;
-	bottom: 0;
-	left: 0;
 	margin: 0;
 	background-color: white;
 	padding: 0;
-	height: 5%;
+	height: 5vh;
+	flex-shrink: 0;
 	width: 100%;
 	list-style: none;
 	display: flex;
@@ -140,21 +158,23 @@
 }
 </style>
 
-<header class="hide-on-print">
-	<button type="button" on:click={() => save(character)}>Save As</button>
-	<input type="file" on:change={open} />
-	{#if character.lastChanged}
-		<span>Last change: {new Date(character.lastChanged).toLocaleString()}</span>	
-	{/if}
-</header>
 <main>
 	{#if inCharacterSheet}
-		<Character character={character}></Character>
+		<div class="app-screen">
+			<Character character={character}></Character>
+		</div>
+	{:else if inActions}
+		<div class="app-screen">
+			<Actions></Actions>
+		</div>
 	{:else}
-		<Actions></Actions>
+		<div class="app-screen">
+			<Settings onSave={() => save(character)} onOpen={() => open()} lastChanged={character.lastChanged}></Settings>
+		</div>
 	{/if}
-	<menu class="app-menu">
+	<menu class="app-menu hide-on-print">
 		<li><button type="button" on:click={openCharacterSheet}><img src="{scrollSvg}" alt="Character sheet"/></button></li>
 		<li><button type="button" on:click={openActions}><img src="{diceSvg}" alt="Actions"/></button></li>
+		<li><button type="button" on:click={openSettings}><img src="{diceSvg}" alt="Actions"/></button></li>
 	</menu>
 </main>

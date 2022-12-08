@@ -16,9 +16,11 @@
     export let character;
 </script>
 
-<style>
-.character-sheet > div {
-	margin-bottom: 2rem;
+<style lang="scss">
+.character-sheet {
+    > div {
+	    margin-bottom: 2rem;
+    }
 }
 </style>
 

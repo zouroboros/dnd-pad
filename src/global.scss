@@ -1,5 +1,6 @@
 $border-color: rgb(224, 224, 224);
 $margin: 1rem;
+$padding-small: 0.1rem;
 
 @font-face {
     font-family: 'standardgrafregular';
@@ -97,7 +98,7 @@ table {
 	width: 100%;
 
 	tr td {
-		padding: $margin / 2;
+		padding: $padding-small;
 		input {
 			width: 100%;
 		}
