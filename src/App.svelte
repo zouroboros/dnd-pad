@@ -162,7 +162,7 @@ main {
 <main>
 	{#if inCharacterSheet}
 		<div class="app-screen">
-			<Character character={character}></Character>
+			<Character bind:character={character}></Character>
 		</div>
 	{:else if inActions}
 		<div class="app-screen">
