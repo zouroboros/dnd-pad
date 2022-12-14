@@ -35,4 +35,6 @@ jobs:
       - shell: bash
         env:
           DEPLOY_WEBHOOK:  ${{secrets.DEPLOY_WEBHOOK}}
+        # we ignore any error just fire and forget
+        continue-on-error: true
         run: curl "$DEPLOY_WEBHOOK"
