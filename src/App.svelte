@@ -160,22 +160,18 @@ main {
 </style>
 
 <main>
-	{#if inCharacterSheet}
-		<div class="app-screen">
-			<Character bind:character={character}></Character>
-		</div>
-	{:else if inActions}
-		<div class="app-screen">
-			<Actions></Actions>
-		</div>
-	{:else}
-		<div class="app-screen">
-			<Settings onSave={() => save(character)} onOpen={(event) => open(event)} lastChanged={character.lastChanged}></Settings>
-		</div>
-	{/if}
 	<menu class="app-menu hide-on-print">
 		<li><button type="button" on:click={openCharacterSheet}><img src="{scrollSvg}" alt="Character sheet"/></button></li>
 		<li><button type="button" on:click={openActions}><img src="{diceSvg}" alt="Actions"/></button></li>
 		<li><button type="button" on:click={openSettings}><img src="{gearSvg}" alt="Settings"/></button></li>
 	</menu>
+	<div class="app-screen">
+		{#if inCharacterSheet}
+			<Character bind:character={character}></Character>
+		{:else if inActions}
+			<Actions></Actions>
+		{:else}
+			<Settings onSave={() => save(character)} onOpen={(event) => open(event)} lastChanged={character.lastChanged}></Settings>
+		{/if}
+	</div>
 </main>
