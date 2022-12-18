@@ -76,17 +76,18 @@
 
 	let open = function(event) {
 		if(event.srcElement.files.length > 0) {
-			var file = event.target.files[0];
-			const reader = new FileReader();
+			var file = event.target.files[0]
+			const reader = new FileReader()
 			reader.onload = function(event) {
-				const json = JSON.parse(event.target.result);
+				const json = JSON.parse(event.target.result)
 				if(json) {
-					upgradeCharacter(json);
-					saveCharacter(json);
-					character = json;
+					upgradeCharacter(json)
+					saveCharacter(json)
+					character = json
 				}
 			};
-			reader.readAsText(file);
+			reader.readAsText(file)
+			openCharacterSheet()
 		}
 	}
 
