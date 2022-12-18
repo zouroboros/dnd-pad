@@ -9,9 +9,10 @@
 </style>
 
 <div class="hide-on-print">
+    <h1>Settings</h1>
     <button type="button" on:click={onSave}>Save As</button>
     <input type="file" on:change={onOpen} />
     {#if lastChanged}
-        <span>Last change: {new Date(lastChanged).toLocaleString()}</span>	
+        <div>Last change: {new Date(lastChanged).toLocaleString()}</div>	
     {/if}
 </div>
